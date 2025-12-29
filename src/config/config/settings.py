@@ -12,9 +12,9 @@ https://docs.djangoproject.com/en/6.0/ref/settings/
 
 from pathlib import Path
 import os
-from dotenv import load_dotenv #type:ignore
+from dotenv import load_dotenv
 load_dotenv()
-from decouple import config #type:ignore
+from decouple import config
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -46,6 +46,8 @@ INSTALLED_APPS = [
     'rest_framework_simplejwt',
     'rest_framework_simplejwt.token_blacklist',
     'job',
+    'authentication',
+    'application',
 ]
 
 REST_FRAMEWORK = {
@@ -93,9 +95,9 @@ WSGI_APPLICATION = 'config.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.getenv('DB_NAME', 'job_portal'),
+        'NAME': os.getenv('DB_NAME', 'Job_portal2'),
         'USER': os.getenv('DB_USER', 'postgres'),
-        'PASSWORD': os.getenv('DB_PASSWORD', 'qwerty'),
+        'PASSWORD': os.getenv('DB_PASSWORD', 'vaibhav2'),
         'HOST': os.getenv('DB_HOST', 'localhost'),
         'PORT': os.getenv('DB_PORT', '5432'),
     }
@@ -139,3 +141,4 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
+AUTH_USER_MODEL = 'authentication.User'
