@@ -8,6 +8,7 @@ class Application(models.Model):
     job = models.ForeignKey(
         Job, 
         on_delete=models.CASCADE, 
+        null=True,
         related_name='applications'
     )
     
