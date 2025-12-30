@@ -4,8 +4,6 @@ from rest_framework.response import Response #type:ignore
 from rest_framework import status #type:ignore
 from django.views import View
 from django.http import JsonResponse
-# from .tasks import send_application_email
-
 from job.services.services import JobService
 
 class JobListCreateView(APIView):

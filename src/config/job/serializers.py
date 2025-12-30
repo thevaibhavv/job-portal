@@ -6,5 +6,5 @@ class JobSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Job
-        fields = 'all'
+        fields = '__all__'
         read_only_fields = ["posted_by", "created_at"]
